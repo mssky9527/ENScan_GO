@@ -24,9 +24,9 @@ ldflags="\
 "
 
 if [ "$1" == "release" ]; then
-  xgo -out enscan -ldflags="$ldflags" .
+  xgo --cgo=0 -out enscan -ldflags="$ldflags" .
 else
-  xgo -targets=linux/amd64,windows/amd64,darwin/amd64 -out enscan -ldflags="$ldflags"  .
+  xgo --cgo=0 -targets=linux/amd64,windows/amd64,darwin/amd64 -out enscan -ldflags="$ldflags"  .
 fi
 
 if [ -d 'build' ]; then
